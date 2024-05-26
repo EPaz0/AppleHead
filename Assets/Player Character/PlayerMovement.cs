@@ -11,14 +11,22 @@ public class PlayerMovement : MonoBehaviour{
     public Rigidbody2D body;
     public BoxCollider2D groundCheck;
     public LayerMask groundMask;
+    public Transform FirePoint;
 
     public bool grounded;
     float xInput;
     float yInput;
+
+    private bool m_FacingRight = true;  // For determining which way the player is currently facing.
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (FirePoint == null)
+        {
+            Debug.LogError("FirePoint not assigned in the inspector!");
+        }
     }
 
     // Update is called once per frame
@@ -49,14 +57,36 @@ public class PlayerMovement : MonoBehaviour{
             // error!!! - the player wont stop dragging
             body.velocity = new Vector2(newSpeed, body.velocity.y);
 
-            FaceInput();
+            //FaceInput();
+
+            if (xInput > 0 && !m_FacingRight)
+            {
+                // ... flip the player.
+                Flip();
+            }
+            // Otherwise if the input is moving the player left and the player is facing right...
+            else if (xInput < 0 && m_FacingRight)
+            {
+                // ... flip the player.
+                Flip();
+            }
         }
     }
 
-    void FaceInput() {
-        // handle direction character is facing
+    void FaceInput()
+    {
         float direction = Mathf.Sign(xInput);
-        transform.localScale = new Vector3(direction, 1, 1);
+
+        //float direction = Mathf.Sign(xInput);
+        Vector3 scale = transform.localScale;
+ 
+        if (scale.x != direction)
+        {
+            scale.x = direction;
+            transform.localScale = scale;
+
+            Debug.Log($"Player flipped. New localScale: {transform.localScale}");
+        }
     }
 
     void HandleJump(){
@@ -76,5 +106,11 @@ public class PlayerMovement : MonoBehaviour{
             body.velocity *= groundDecay;
         }
     }
+    private void Flip()
+    {
+        // Switch the way the player is labelled as facing.
+        m_FacingRight = !m_FacingRight;
 
+        transform.Rotate(0f, 180f, 0f);
+    }
 }
