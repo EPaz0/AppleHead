@@ -679,6 +679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de71df41ffd99247898c67dda2ed97e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   health: 100
   deathEffect: {fileID: 0}
 --- !u!61 &662662743
@@ -1834,6 +1835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de71df41ffd99247898c67dda2ed97e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 975669058}
   health: 30
   deathEffect: {fileID: 0}
 --- !u!61 &1129646737
