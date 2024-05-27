@@ -10,8 +10,10 @@ public class Player : MonoBehaviour
 	public int currentHealth;
 
 	public HealthBar healthBar;
-	
 	public float transparentVal;
+	
+	public GameManagerScript gameManager;
+	private bool isDead;
 
 	[Header("iFrames")]
 	[SerializeField]private float iFramesDuration;
@@ -55,9 +57,13 @@ public class Player : MonoBehaviour
 		}
 		
 		
-		if (currentHealth <= 0)
+		if (currentHealth <= 0 && !isDead)
 		{
+			isDead = true;
+			gameObject.SetActive(false);
+			gameManager.gameOver(); // to load game over screen
 			Destroy(gameObject);
+			Debug.Log("YOU DIED");
 		}
 	}
 
