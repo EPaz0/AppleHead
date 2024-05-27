@@ -11,10 +11,13 @@ public class Player : MonoBehaviour
 
 	public HealthBar healthBar;
 	
+	public float transparentVal;
+
 	[Header("iFrames")]
 	[SerializeField]private float iFramesDuration;
 	[SerializeField]private int numberOfFlashes;
 	private SpriteRenderer spriteRend;
+	private Material currentMat;
 
 	private void Awake(){
 		// a function from video for iframes: https://www.youtube.com/watch?v=YSzmCf_L2cE
@@ -24,6 +27,7 @@ public class Player : MonoBehaviour
 	// Start is called before the first frame update
     void Start()
     {
+		currentMat = gameObject.GetComponent<Renderer>().material; // used for transparency in iFrames
 		currentHealth = maxHealth;
 		healthBar.SetMaxHealth(maxHealth);
     }
@@ -32,6 +36,13 @@ public class Player : MonoBehaviour
     void Update()
     {
     }
+
+	void SetTransparency(float alphaVal){
+		// used for transparency in iFrames
+		Color oldColor = currentMat.color;
+		Color newColor = new Color(oldColor.r, oldColor.g, oldColor.b, alphaVal);
+		currentMat.SetColor("_Color", newColor);
+	}
 
 	public void TakeDamage(int damage)
 	{
@@ -54,12 +65,15 @@ public class Player : MonoBehaviour
 	private IEnumerator Invulnerability(){
 		// 6 = Player Layer, 8 = Enemy Layer
 		Physics2D.IgnoreLayerCollision(6, 8, true);
-		for (int i = 0; i < numberOfFlashes; i++){
-			// will flash red character (will change to white)
-			spriteRend.color = new Color (1, 0, 0, 0.5f);
-			yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes * 2));
-			spriteRend.color = Color.white;
-			yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes * 2));
+		for (int i = 0; i < numberOfFlashes; i++){ // flash transparency for # of flashes
+			// will flash transparent red
+			// spriteRend.color = new Color (1, 0, 0, 0.5f);
+			SetTransparency(transparentVal);
+
+			yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes * 4));
+			// spriteRend.color = Color.white; // white is used to remove red
+			SetTransparency(1); // set to original
+			yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes * 4));
 		}
 		Physics2D.IgnoreLayerCollision(6, 8, false);
 

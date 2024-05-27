@@ -864,8 +864,9 @@ MonoBehaviour:
   maxHealth: 3
   currentHealth: 3
   healthBar: {fileID: 1335926054}
-  iFramesDuration: 2
-  numberOfFlashes: 3
+  transparentVal: 0.5
+  iFramesDuration: 3
+  numberOfFlashes: 4
 --- !u!95 &851958083
 Animator:
   serializedVersion: 5
