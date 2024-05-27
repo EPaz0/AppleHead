@@ -60,11 +60,29 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        CheckGround();
+         CheckGround();
         ApplyFriction();
-        MoveWithInput();
+        if (!Input.GetKey(KeyCode.LeftShift)) // Prevent movement when holding Shift
+        {
+            MoveWithInput();
+        }
+        else
+        {
+            // Allow turning around while holding Shift
+            HandleTurning();
+        }
     }
-
+   void HandleTurning()
+    {
+        if (xInput > 0 && !m_FacingRight)
+        {
+            Flip();
+        }
+        else if (xInput < 0 && m_FacingRight)
+        {
+            Flip();
+        }
+    }
     void GetInput()
     {
         xInput = Input.GetAxis("Horizontal");
