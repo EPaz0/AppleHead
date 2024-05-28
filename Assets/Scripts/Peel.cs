@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Peel : MonoBehaviour
 {
+	[Header("Variables To Destroy Peel")]
 
     public int damage = 1;
     public GameObject player;

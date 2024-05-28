@@ -11,9 +11,11 @@ public class Enemy : MonoBehaviour
     
     public GameObject deathEffect;
 
-    public GameObject bannanaPeel;
+    public GameObject projectile;
 
+    public float LaunchForce;
     private float phase = 1;
+
     
 
     void Start(){
@@ -34,7 +36,10 @@ public class Enemy : MonoBehaviour
 
     private IEnumerator Phase1(){
         while(phase == 1){
-            Instantiate(bannanaPeel, gameObject.transform.position, gameObject.transform.rotation);
+            GameObject ThrownProjectile1 = Instantiate(projectile, gameObject.transform.position, gameObject.transform.rotation);
+            GameObject ThrownProjectile2 = Instantiate(projectile, gameObject.transform.position, gameObject.transform.rotation);
+            ThrownProjectile2.GetComponent<Rigidbody2D>().velocity = -transform.right * LaunchForce;
+            ThrownProjectile1.GetComponent<Rigidbody2D>().velocity = transform.right * LaunchForce;
             yield return new WaitForSeconds(5);
         }
     }
