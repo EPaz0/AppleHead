@@ -1,33 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class Enemy : MonoBehaviour
 {
     public GameManagerScript gameManager;
 
-    public int health = 100;
+    public int maxHealth = 100;
+    public int health;
+    public int damage;
     
+    public Player player;
     public GameObject deathEffect;
-
     public GameObject projectile;
+    public HealthBar healthBar;
 
     public float LaunchForce;
     private float phase = 1;
 
-    
-
     void Start(){
         StartCoroutine(Phase1());
+        healthBar.SetMaxHealth(maxHealth);
     }
     public void TakeDamage(int damage)
     {
         Debug.Log("Enemy takes damage: " + damage); // Debug log
         health -= damage;
         Debug.Log("Enemy health: " + health); // Debug log
-        //health -= damage;
-        
+        healthBar.SetHealth(health);       
         if(health <= 0)
         {
             Die();
@@ -44,6 +46,13 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            player.TakeDamage(damage);
+        }
+    }
 
     void Die()
     {
