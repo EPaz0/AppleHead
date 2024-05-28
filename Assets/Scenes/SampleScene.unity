@@ -1235,6 +1235,7 @@ GameObject:
   - component: {fileID: 662662744}
   - component: {fileID: 662662742}
   - component: {fileID: 662662746}
+  - component: {fileID: 662662747}
   m_Layer: 8
   m_Name: ShooterBanana
   m_TagString: Untagged
@@ -1366,6 +1367,27 @@ CapsuleCollider2D:
   m_Offset: {x: -0.018972754, y: 0.009486437}
   m_Size: {x: 3.0482192, y: 3.5256839}
   m_Direction: 0
+--- !u!95 &662662747
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662662741}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &715399048
 GameObject:
   m_ObjectHideFlags: 0
@@ -2665,8 +2687,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.0046081543, y: 4.846199}
-  m_SizeDelta: {x: -11.8193, y: 0}
+  m_AnchoredPosition: {x: 1.9521027, y: 5.0423}
+  m_SizeDelta: {x: -7.9059, y: 4.3122}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1305960080
 MonoBehaviour:
