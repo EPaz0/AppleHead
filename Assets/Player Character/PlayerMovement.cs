@@ -135,8 +135,8 @@ public class PlayerMovement : MonoBehaviour
 
     void HandleShooting()
     {
-        Debug.Log("HandleShooting called");
-        Debug.Log("m_FacingRight: " + m_FacingRight);
+        //Debug.Log("HandleShooting called");
+        //Debug.Log("m_FacingRight: " + m_FacingRight);
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
@@ -173,7 +173,7 @@ public class PlayerMovement : MonoBehaviour
             FirePoint.localPosition = originalFirePointPosition; // Reset FirePoint position
             FirePoint.localRotation = originalFirePointRotation; // Reset FirePoint rotation
         }
-        Debug.Log("FirePoint Position: " + FirePoint.localPosition);
+        //Debug.Log("FirePoint Position: " + FirePoint.localPosition);
     }
 
     private void Flip()
@@ -193,8 +193,8 @@ public class PlayerMovement : MonoBehaviour
         {
             FirePoint.localPosition = new Vector2(-originalFirePointPosition.x, originalFirePointPosition.y);
         }
-        Debug.Log("Flip called, m_FacingRight: " + m_FacingRight);
-        Debug.Log("FirePoint Position after Flip: " + FirePoint.localPosition);
+        //Debug.Log("Flip called, m_FacingRight: " + m_FacingRight);
+        //Debug.Log("FirePoint Position after Flip: " + FirePoint.localPosition);
     }
 
     void Shoot()
