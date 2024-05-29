@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Callbacks;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -14,11 +16,12 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMask;
     public Transform FirePoint;
     public GameObject projectilePrefab; // Add a reference to the projectile prefab
-
+    
     public bool grounded;
     float xInput;
     float yInput;
 
+    Animator animator;
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 
     // The original local position and rotation of the FirePoint
@@ -39,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         if (FirePoint == null)
         {
             Debug.LogError("FirePoint not assigned in the inspector!");
@@ -60,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+
          CheckGround();
         ApplyFriction();
         if (!Input.GetKey(KeyCode.LeftShift)) // Prevent movement when holding Shift
@@ -97,7 +102,6 @@ public class PlayerMovement : MonoBehaviour
             float increment = xInput * acceleration;
             // clamp function ensures that first parameters does not get updated the amount of times in the other parameters
             float newSpeed = Mathf.Clamp(body.velocity.x + increment, -groundSpeed, groundSpeed);
-            // error!!! - the player wont stop dragging
             body.velocity = new Vector2(newSpeed, body.velocity.y);
 
             if (xInput > 0 && !m_FacingRight)
@@ -108,11 +112,15 @@ public class PlayerMovement : MonoBehaviour
             {
                 Flip();
             }
+
         }
+        animator.SetFloat("xVelocity", Math.Abs(body.velocity.x));
+
     }
 
     void HandleJump()
     {
+        // animator.SetBool("isJumping", !isGrounded);
         if (Input.GetButtonDown("Jump") && grounded)
         {
             // keep the current x velocity and apply jumpspeed to y velocity
