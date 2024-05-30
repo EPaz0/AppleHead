@@ -1450,7 +1450,7 @@ Animator:
   m_GameObject: {fileID: 662662741}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d7123dbfe13e0e44096e4b002caa1ecd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2459,6 +2459,7 @@ MonoBehaviour:
   speed: 5
   rotateSpeed: 200
   explosion: {fileID: 0}
+  damage: 15
 --- !u!4 &1129646734
 Transform:
   m_ObjectHideFlags: 0
@@ -2468,7 +2469,7 @@ Transform:
   m_GameObject: {fileID: 1129646730}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.46, y: 7.86, z: 0.041543473}
+  m_LocalPosition: {x: -6.34, y: 8.7, z: 0.041543473}
   m_LocalScale: {x: 0.5, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2529,7 +2530,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 1.2351575, y: 0.16798145}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2540,7 +2541,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.4703145, y: 1.2173878}
   m_EdgeRadius: 0
 --- !u!1 &1133569106
 GameObject:

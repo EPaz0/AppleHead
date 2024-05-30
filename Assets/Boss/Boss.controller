@@ -263,10 +263,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29fbaa43c21424f4998034d3b839ce66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missilePrefab: {fileID: 3186590613980188164, guid: 62f322e676909f74f824e2d6c032f6bd, type: 3}
+  missilePrefab: {fileID: 1008903611380064486, guid: 435bbdc47cbf31b46a3e3b7c00536b45, type: 3}
   launchForce: 10
   missileDuration: 5
   timer: 0
+  spawnPositions:
+  - {x: 6.46, y: 7.86, z: 0.0415434}
+  - {x: -6.34, y: 8.7, z: 0.0415434}
 --- !u!1102 &2321938361942649183
 AnimatorState:
   serializedVersion: 6
