@@ -11,7 +11,11 @@ public class MissileBehavior : StateMachineBehaviour
 
     public float timer;
 
-
+        // Define positions for missile spawning
+    public Vector3[] spawnPositions = new Vector3[] {
+        new Vector3(6.46f, 7.86f, 0.0415434f),
+        new Vector3(-6.34f, 8.7f, 0.0415434f)
+    };
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -19,16 +23,19 @@ public class MissileBehavior : StateMachineBehaviour
         // Initialize the timer
         timer = missileDuration;
 
-        // Instantiate and launch the missile
+        // Instantiate and launch the missiles at specified positions
         if (missilePrefab != null)
         {
-            GameObject missile = Instantiate(missilePrefab, animator.transform.position, animator.transform.rotation);
-            Rigidbody2D rb = missile.GetComponent<Rigidbody2D>();
-
-           /* if (rb != null)
+            foreach (Vector3 position in spawnPositions)
             {
-                rb.velocity = animator.transform.up * launchForce;
-            }*/
+                GameObject missile = Instantiate(missilePrefab, position, Quaternion.identity);
+                Rigidbody2D rb = missile.GetComponent<Rigidbody2D>();
+
+                /* if (rb != null)
+                {
+                    rb.velocity = animator.transform.up * launchForce;
+                }*/
+            }
         }
 
     }

@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
     private float phase = 1;
 
     void Start(){
-        StartCoroutine(Phase1());
+        //StartCoroutine(Phase1());
         healthBar.SetMaxHealth(maxHealth);
     }
     public void TakeDamage(int damage)
@@ -36,15 +36,17 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    /*
     private IEnumerator Phase1(){
         while(phase == 1){
+            
             GameObject ThrownProjectile1 = Instantiate(projectile, gameObject.transform.position, gameObject.transform.rotation);
             GameObject ThrownProjectile2 = Instantiate(projectile, gameObject.transform.position, gameObject.transform.rotation);
             ThrownProjectile2.GetComponent<Rigidbody2D>().velocity = -transform.right * LaunchForce;
             ThrownProjectile1.GetComponent<Rigidbody2D>().velocity = transform.right * LaunchForce;
             yield return new WaitForSeconds(5);
         }
-    }
+    }*/
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

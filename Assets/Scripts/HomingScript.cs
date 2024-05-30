@@ -60,12 +60,12 @@ public class HomingMissile : MonoBehaviour
                 player.TakeDamage(damage); // Apply damage to the player
             }
 
-            Instantiate(explosion, transform.position, transform.rotation);
+            //Instantiate(explosion, transform.position, transform.rotation);
             Destroy(gameObject); // Destroy the missile
         }
         else
         {
-            Instantiate(explosion, transform.position, transform.rotation);
+            //Instantiate(explosion, transform.position, transform.rotation);
             Destroy(gameObject); // Destroy the missile if it hits anything else
         }
 
