@@ -10,7 +10,8 @@ public class HomingMissile : MonoBehaviour
     public float rotateSpeed = 200f;
     public GameObject explosion;
 
-    public int damage = 15;
+    public int damage = 1;
+    public GameObject player;
 
     private Rigidbody2D rb;
 
@@ -20,6 +21,7 @@ public class HomingMissile : MonoBehaviour
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.Find("Player");
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
@@ -49,29 +51,21 @@ public class HomingMissile : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D other) {
-        // unity will call when enter trigger
-
-        if (other.CompareTag("Player"))
+    void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+    
+        Debug.Log("Bullet hit: " + hitInfo.name); 
+        var layerMask = hitInfo.gameObject.layer;
+        Debug.Log(layerMask);
+        if(layerMask == 6)
         {
-            Player player = other.GetComponent<Player>();
-            if (player != null)
-            {
-                player.TakeDamage(damage); // Apply damage to the player
-            }
-
-            //Instantiate(explosion, transform.position, transform.rotation);
-            Destroy(gameObject); // Destroy the missile
+            Debug.Log(player);
+            player.GetComponent<Player>().TakeDamage(damage);
         }
-        else
-        {
-            //Instantiate(explosion, transform.position, transform.rotation);
-            Destroy(gameObject); // Destroy the missile if it hits anything else
-        }
-
-
-
+        Destroy(gameObject);
+    
     }
+
     /*public void Explode()
     {
         Instantiate(explosion, transform.position, transform.rotation);

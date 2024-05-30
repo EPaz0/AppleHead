@@ -13,9 +13,8 @@ GameObject:
   - component: {fileID: 3207566060066274395}
   - component: {fileID: 6620318678787625887}
   - component: {fileID: 2104367714802314000}
-  - component: {fileID: 6803423228576851160}
   m_Layer: 8
-  m_Name: FlyingBanana 1
+  m_Name: FlyingBanana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54,7 +53,8 @@ MonoBehaviour:
   speed: 5
   rotateSpeed: 200
   explosion: {fileID: 0}
-  damage: 15
+  damage: 1
+  player: {fileID: 0}
 --- !u!61 &3207566060066274395
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -148,41 +148,6 @@ MonoBehaviour:
   projectile: {fileID: 0}
   healthBar: {fileID: 1566673000729300282}
   LaunchForce: 0
---- !u!70 &6803423228576851160
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1008903611380064486}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 1.3801608, y: 0.19194329}
-  m_Size: {x: 3.2603216, y: 1.2742045}
-  m_Direction: 0
 --- !u!1 &1446740712250563775
 GameObject:
   m_ObjectHideFlags: 0
