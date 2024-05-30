@@ -130,6 +130,12 @@ public class PlayerMovement : MonoBehaviour
             grounded = false;
             animator.SetBool("isJumping", !grounded);
         }
+        else{
+            grounded = true;
+            animator.SetBool("isJumping", !grounded);
+
+        }
+
     }
 
     void CheckGround()
@@ -219,9 +225,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision){
-        grounded = true;
-        animator.SetBool("isJumping", !grounded);
+    // private void OnTriggerEnter2D(Collider2D collision){
+    //     // grounded = true;
+    //     // animator.SetBool("isJumping", !grounded);
 
-    }
+    // }
 }
