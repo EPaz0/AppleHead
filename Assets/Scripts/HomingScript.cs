@@ -61,8 +61,12 @@ public class HomingMissile : MonoBehaviour
         {
             Debug.Log(player);
             player.GetComponent<Player>().TakeDamage(damage);
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
+        else if(layerMask == 7)
+        {
+            Destroy(gameObject);
+        }
     
     }
 
