@@ -130,10 +130,12 @@ public class PlayerMovement : MonoBehaviour
             grounded = false;
             animator.SetBool("isJumping", !grounded);
         }
-        else{
+        else if (grounded){
             grounded = true;
             animator.SetBool("isJumping", !grounded);
-
+        }
+        else {
+            animator.SetBool("isJumping", !grounded);
         }
 
     }
