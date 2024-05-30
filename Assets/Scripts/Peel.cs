@@ -12,6 +12,7 @@ public class Peel : MonoBehaviour
     void Awake()
     {
         player = GameObject.Find("Player");
+        StartCoroutine(DestroyAfterTime(10f));
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo)
@@ -27,5 +28,13 @@ public class Peel : MonoBehaviour
         }
         Destroy(gameObject);
     
+    }
+
+
+    // Coroutine to destroy the peel after a specified time
+    private IEnumerator DestroyAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Destroy(gameObject);
     }
 }
