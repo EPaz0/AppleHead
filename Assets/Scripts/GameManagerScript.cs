@@ -27,10 +27,12 @@ public class GameManagerScript : MonoBehaviour
     }
 
     public void gameOver(){
+        Time.timeScale = 0f; // Freeze the game
         gameOverUI.SetActive(true);
     }
 
     public void restart(){
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Debug.Log("Restart");
     }
