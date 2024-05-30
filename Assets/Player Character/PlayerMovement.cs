@@ -115,6 +115,8 @@ public class PlayerMovement : MonoBehaviour
 
         }
         animator.SetFloat("xVelocity", Math.Abs(body.velocity.x));
+        animator.SetFloat("yVelocity", body.velocity.y);
+
 
     }
 
@@ -125,6 +127,8 @@ public class PlayerMovement : MonoBehaviour
         {
             // keep the current x velocity and apply jumpspeed to y velocity
             body.velocity = new Vector2(body.velocity.x, jumpSpeed);
+            grounded = false;
+            animator.SetBool("isJumping", !grounded);
         }
     }
 
@@ -213,5 +217,11 @@ public class PlayerMovement : MonoBehaviour
             Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
             rb.velocity = FirePoint.up * 10f; // Adjust the speed as needed
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision){
+        grounded = true;
+        animator.SetBool("isJumping", !grounded);
+
     }
 }
