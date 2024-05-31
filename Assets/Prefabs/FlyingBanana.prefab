@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3207566060066274395}
   - component: {fileID: 6620318678787625887}
   - component: {fileID: 2104367714802314000}
+  - component: {fileID: -1353118869981371395}
   m_Layer: 8
   m_Name: FlyingBanana
   m_TagString: Untagged
@@ -147,6 +148,28 @@ MonoBehaviour:
   deathEffect: {fileID: 0}
   projectile: {fileID: 0}
   healthBar: {fileID: 1566673000729300282}
+  boss: 0
+  LaunchForce: 0
+--- !u!114 &-1353118869981371395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008903611380064486}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e8a8185fcf91747acbaf2e48bcaf19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  maxHealth: 1
+  health: 1
+  damage: 0
+  player: {fileID: 0}
+  deathEffect: {fileID: 0}
+  projectile: {fileID: 0}
+  healthBar: {fileID: 0}
   LaunchForce: 0
 --- !u!1 &1446740712250563775
 GameObject:

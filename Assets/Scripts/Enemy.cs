@@ -16,13 +16,20 @@ public class Enemy : MonoBehaviour
     public GameObject deathEffect;
     public GameObject projectile;
     public HealthBar healthBar;
+    public bool boss;
 
     public float LaunchForce;
     private float phase = 1;
 
+
+    private Animator anim;
+
     void Start(){
         //StartCoroutine(Phase1());
         healthBar.SetMaxHealth(maxHealth);
+        
+
+        anim = GetComponent<Animator>();
     }
     public void TakeDamage(int damage)
     {
@@ -33,6 +40,15 @@ public class Enemy : MonoBehaviour
         if(health <= 0)
         {
             Die();
+        }
+    }
+
+
+    private void Update()
+    {
+        if (health <= 250 && boss) {
+           // Debug.Log("HEALTH IS LESS THAN 250");
+            anim.SetTrigger("stageTwo");
         }
     }
 
