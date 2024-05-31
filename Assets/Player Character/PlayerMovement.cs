@@ -128,13 +128,17 @@ public class PlayerMovement : MonoBehaviour
             // keep the current x velocity and apply jumpspeed to y velocity
             body.velocity = new Vector2(body.velocity.x, jumpSpeed);
             grounded = false;
-            animator.SetBool("isJumping", !grounded);
+            animator.SetBool("isJumping", grounded);
         }
-        else if (grounded){
-            grounded = true;
-            animator.SetBool("isJumping", !grounded);
-        }
+        // else if (grounded){
+        //     grounded = true;
+        //     animator.SetBool("isJumping", !grounded);
+        // }
         else {
+            CheckGround();
+            // grounded  = true;
+            // if (grounded)
+            animator.SetFloat("xVelocity", Math.Abs(body.velocity.x));
             animator.SetBool("isJumping", !grounded);
         }
 
@@ -142,7 +146,9 @@ public class PlayerMovement : MonoBehaviour
 
     void CheckGround()
     {
+
         grounded = Physics2D.OverlapAreaAll(groundCheck.bounds.min, groundCheck.bounds.max, groundMask).Length > 0;
+        Debug.Log("is grounded: " + grounded);
     }
 
     void ApplyFriction()
