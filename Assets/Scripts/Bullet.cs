@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 20f;
     public Rigidbody2D rb;
-    public int damage = 10;
+    public int damage = 1;
     public GameObject impactEffect; //For bullet impact animation
 
     // Start is called before the first frame update

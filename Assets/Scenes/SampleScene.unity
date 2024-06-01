@@ -1392,8 +1392,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  maxHealth: 500
-  health: 500
+  maxHealth: 5000
+  health: 5000
   damage: 1
   player: {fileID: 851958082}
   deathEffect: {fileID: 0}
@@ -1741,7 +1741,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1724608475}
-  bulletPrefab: {fileID: 1139793509190857415, guid: abf5e41f8110a78438dfc4089968c52a, type: 3}
+  bulletPrefab: {fileID: 3455723464780725593, guid: 2d51ed05e3f91a646a5025c7c3c76874, type: 3}
+  fireRate: 0.1
 --- !u!114 &851958082
 MonoBehaviour:
   m_ObjectHideFlags: 0

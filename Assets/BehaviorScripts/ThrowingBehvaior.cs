@@ -70,15 +70,15 @@ public class ThrowingBehavior : StateMachineBehaviour
         if (timer <= 0)
         {
             // Randomly choose the next state
-            int nextState = Random.Range(0, 2); // 0 for Idle, 1 for MissleAttack
+            int nextState = Random.Range(0, 3); // 0 for Idle, 1 for MissleAttack
 
             if (nextState == 0)
             {
-                animator.SetTrigger("Idle");
+                animator.SetTrigger("MissileAttack");
             }
             else
             {
-                animator.SetTrigger("MissileAttack");
+                animator.SetTrigger("Idle");
                // animator.SetTrigger("Idle");
             }
         }

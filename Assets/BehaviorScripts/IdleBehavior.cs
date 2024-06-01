@@ -21,7 +21,7 @@ public class IdleBehavior : StateMachineBehaviour
         if (timer <= 0)
         {
             // Randomly choose the next state
-            int nextState = Random.Range(0, 2); // 0 for Idle, 1 for MissleAttack
+            int nextState = Random.Range(0, 1); // 0 for Idle, 1 for MissleAttack
 
             if (nextState == 0)
             {
