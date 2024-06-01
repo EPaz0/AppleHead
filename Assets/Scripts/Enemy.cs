@@ -30,6 +30,14 @@ public class Enemy : MonoBehaviour
         
 
         anim = GetComponent<Animator>();
+
+
+        if (boss) {
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation; // Freeze rotation to keep the object upright
+            rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+
+        }
     }
     public void TakeDamage(int damage)
     {

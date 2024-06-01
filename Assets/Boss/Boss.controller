@@ -180,6 +180,8 @@ MonoBehaviour:
   minTime: 1
   maxTime: 2.5
   speed: 7
+  jumpForce: 15
+  jumpInterval: 1
 --- !u!1102 &-5108185132116546556
 AnimatorState:
   serializedVersion: 6
