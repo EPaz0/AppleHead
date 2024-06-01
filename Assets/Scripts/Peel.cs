@@ -25,8 +25,9 @@ public class Peel : MonoBehaviour
         {
             //Debug.Log(player);
             player.GetComponent<Player>().TakeDamage(damage);
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
+       
     
     }
 
