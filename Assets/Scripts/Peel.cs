@@ -18,12 +18,12 @@ public class Peel : MonoBehaviour
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
     
-        Debug.Log("Bullet hit: " + hitInfo.name); 
+        //Debug.Log("Bullet hit: " + hitInfo.name); 
         var layerMask = hitInfo.gameObject.layer;
-        Debug.Log(layerMask);
+       // Debug.Log(layerMask);
         if(layerMask == 6)
         {
-            Debug.Log(player);
+            //Debug.Log(player);
             player.GetComponent<Player>().TakeDamage(damage);
         }
         Destroy(gameObject);

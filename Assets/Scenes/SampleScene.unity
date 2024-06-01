@@ -1398,6 +1398,7 @@ MonoBehaviour:
   deathEffect: {fileID: 0}
   projectile: {fileID: 118912614}
   healthBar: {fileID: 185453617}
+  boss: 1
   LaunchForce: 3
 --- !u!212 &662662744
 SpriteRenderer:
@@ -2560,6 +2561,7 @@ MonoBehaviour:
   deathEffect: {fileID: 0}
   projectile: {fileID: 0}
   healthBar: {fileID: 1759130317}
+  boss: 0
   LaunchForce: 0
 --- !u!61 &1129646737
 BoxCollider2D:

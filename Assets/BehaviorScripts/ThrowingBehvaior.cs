@@ -78,8 +78,8 @@ public class ThrowingBehavior : StateMachineBehaviour
             }
             else
             {
-                //animator.SetTrigger("MissleAttack");
-                animator.SetTrigger("Idle");
+                animator.SetTrigger("MissileAttack");
+               // animator.SetTrigger("Idle");
             }
         }
     }

@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         if (FirePoint == null)
         {
-            Debug.LogError("FirePoint not assigned in the inspector!");
+           // Debug.LogError("FirePoint not assigned in the inspector!");
         }
         else
         {

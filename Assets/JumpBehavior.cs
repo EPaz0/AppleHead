@@ -2,44 +2,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IdleBehavior : StateMachineBehaviour
+public class JumpBehavior : StateMachineBehaviour
 {
-    public float timer;
+    private float timer;
     public float minTime;
     public float maxTime;
+
+    private Transform playerPos;
+    public float speed;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+        playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        timer = Random.Range(minTime, maxTime);
+        Debug.Log("Entered JumpBehavior state. Timer set to: " + timer);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        timer -= Time.deltaTime;
-
         if (timer <= 0)
         {
-            // Randomly choose the next state
-            int nextState = Random.Range(0, 2); // 0 for Idle, 1 for MissleAttack
-
-            if (nextState == 0)
-            {
-                animator.SetTrigger("Throwing");
-            }
-            else
-            {
-                //animator.SetTrigger("MissleAttack");
-                animator.SetTrigger("MissileAttack");
-            }
+            animator.SetTrigger("IdleTwo");
+            Debug.Log("Timer expired. Transitioning to IdleTwo state.");
+        }
+        else
+        {
+            timer -= Time.deltaTime;
+            Debug.Log("Timer: " + timer);
         }
 
+        Vector2 target = new Vector2(playerPos.position.x, animator.transform.position.y);
+        animator.transform.position = Vector2.MoveTowards(animator.transform.position, target, speed * Time.deltaTime);
+        Debug.Log("Moving towards player. Current position: " + animator.transform.position);
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       
+        Debug.Log("Exited JumpBehavior state.");
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
