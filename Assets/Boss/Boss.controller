@@ -179,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minTime: 1
   maxTime: 2.5
-  speed: 7
+  speed: 20
   jumpForce: 15
   jumpInterval: 1
 --- !u!1102 &-5108185132116546556
@@ -881,7 +881,7 @@ AnimatorStateMachine:
     m_Position: {x: -180, y: -390, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2829992149193456384}
-    m_Position: {x: 110, y: -390, z: 0}
+    m_Position: {x: 120, y: -400, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
