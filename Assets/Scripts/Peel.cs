@@ -27,8 +27,13 @@ public class Peel : MonoBehaviour
             player.GetComponent<Player>().TakeDamage(damage);
             Destroy(gameObject);
         }
-       
-    
+        else if (hitInfo.CompareTag("Bullet"))
+        {
+            Destroy(gameObject); // Destroy the peel if hit by a bullet
+            Destroy(hitInfo.gameObject); // Optionally destroy the bullet as well
+        }
+
+
     }
 
 
