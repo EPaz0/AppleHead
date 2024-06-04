@@ -11,10 +11,11 @@ public class MissileBehavior : StateMachineBehaviour
 
     public float timer;
 
-        // Define positions for missile spawning
+    // Define positions for missile spawning
     public Vector3[] spawnPositions = new Vector3[] {
-        new Vector3(6.46f, 7.86f, 0.0415434f),
-        new Vector3(-6.34f, 8.7f, 0.0415434f)
+        new Vector3(16.84f, 12.62f, -0.05745613f),
+        new Vector3(-18.96f, 12.62f, -0.05745613f),
+        new Vector3(0.51f,18.17f,-0.05745613f)
     };
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
