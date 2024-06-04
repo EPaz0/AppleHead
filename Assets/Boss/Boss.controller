@@ -179,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minTime: 1
   maxTime: 2.5
-  speed: 20
+  speed: 4
   jumpForce: 15
   jumpInterval: 1
 --- !u!1102 &-5108185132116546556
