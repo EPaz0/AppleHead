@@ -31,7 +31,7 @@ public class IdleTwoBehavior : StateMachineBehaviour
             else
             {
                 //animator.SetTrigger("MissleAttack");
-                animator.SetTrigger("CurvedThrowingAttack");
+                animator.SetTrigger("CurvedShooting");
             }
         }
         else

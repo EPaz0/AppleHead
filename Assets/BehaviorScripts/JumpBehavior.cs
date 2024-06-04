@@ -32,8 +32,19 @@ public class JumpBehavior : StateMachineBehaviour
     {
         if (timer <= 0)
         {
-            animator.SetTrigger("IdleTwo");
-            Debug.Log("Timer expired. Transitioning to IdleTwo state.");
+            //animator.SetTrigger("IdleTwo");
+            //Debug.Log("Timer expired. Transitioning to IdleTwo state.");
+
+            int rand = Random.Range(0, 1);
+            if (rand == 0)
+            {
+                animator.SetTrigger("IdleTwo");
+            }
+            else 
+            {
+                animator.SetTrigger("CurvedShooting");
+            }
+
         }
         else
         {

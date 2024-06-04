@@ -18,7 +18,7 @@ public class StageTwoBehavior : StateMachineBehaviour
         }
         else if (rand == 2)
         {
-            //animator.SetTrigger("");
+            animator.SetTrigger("CurvedShooting");
         }
     }
 
