@@ -19,7 +19,6 @@ public class Enemy : MonoBehaviour
     public bool boss;
 
     public float LaunchForce;
-    private float phase = 1;
 
 
     private Animator anim;
