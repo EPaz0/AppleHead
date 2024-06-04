@@ -16,9 +16,9 @@ public class ThrowingBehavior : StateMachineBehaviour
     // Specified positions for the banana peels
     private Vector3[] spawnPositions = new Vector3[]
     {
-        new Vector3(10.02f, 9.7f, 0f),
-        new Vector3(-10.11f, 10.59f, 0f),
-        new Vector3(-0.58f, 6.37f, 0f)
+        new Vector3(-12f, 9.7f, 0f),
+        new Vector3(-5f, 10.59f, 0f),
+        new Vector3(2f, 6.37f, 0f)
     };
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -29,7 +29,8 @@ public class ThrowingBehavior : StateMachineBehaviour
         {
             foreach (var position in spawnPositions)
             {
-                GameObject thrownProjectile = Instantiate(projectile, position, Quaternion.identity);
+                Vector3 randPos = new Vector3(Random.Range(0f, 7.0f),0f,0f);
+                GameObject thrownProjectile = Instantiate(projectile, position+randPos, Quaternion.identity);
                 Rigidbody2D rb = thrownProjectile.GetComponent<Rigidbody2D>();
 
                 if (rb != null)
