@@ -22,7 +22,17 @@ public class IdleTwoBehavior : StateMachineBehaviour
     {
         if (timer <= 0)
         {
-            animator.SetTrigger("JumpAttack");
+            int nextState = Random.Range(0, 1); // 0 for Idle, 1 for MissleAttack
+
+            if (nextState == 0)
+            {
+                animator.SetTrigger("JumpAttack");
+            }
+            else
+            {
+                //animator.SetTrigger("MissleAttack");
+                animator.SetTrigger("CurvedThrowingAttack");
+            }
         }
         else
         {
