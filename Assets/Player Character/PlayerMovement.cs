@@ -136,6 +136,11 @@ public class PlayerMovement : MonoBehaviour
             }
 
         }
+        else 
+        {
+            // Stop horizontal movement if no input
+            body.velocity = new Vector2(0, body.velocity.y);
+        }
         animator.SetFloat("xVelocity", Math.Abs(body.velocity.x));
         animator.SetFloat("yVelocity", body.velocity.y);
 
