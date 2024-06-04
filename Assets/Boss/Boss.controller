@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4b9311e377215c49a6dbb215d420643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 2641165347847103961, guid: f80c7ae8fd632d74d90e5e9fcfd12a34, type: 3}
+  projectilePrefab: {fileID: 7830458756325099317, guid: 19c7072ea32c11845a8376333149b972, type: 3}
   bossReference: {fileID: 4432419116377775886, guid: 70338a0b9717bbe4bb70fe3a9a288df6, type: 3}
   stateTimer: 5
   moveSpeed: 5
@@ -1037,7 +1037,7 @@ AnimatorStateMachine:
     m_Position: {x: 80, y: -50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2135066967381365072}
-    m_Position: {x: -180, y: -260, z: 0}
+    m_Position: {x: -180, y: -310, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1035371961807612192}
     m_Position: {x: -180, y: -570, z: 0}

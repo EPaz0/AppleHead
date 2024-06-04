@@ -7,33 +7,26 @@ public class CurvedThrowingBehavior : StateMachineBehaviour
 {
     public GameObject projectilePrefab;
     public GameObject bossReference;
-    public float stateTimer = 5f; // Duration the boss will throw projectiles
-    
+    public float stateTimer = 10f; // Duration the boss will throw projectiles
     public float moveSpeed = 5;
-    
-
+    private GameObject projectile;
     private float timer;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         // Initialize timers
         timer = stateTimer;
-        spawnProjectile();
-        
-        
-    
+        projectile = Instantiate(projectilePrefab, bossReference.transform.position, bossReference.transform.rotation);
+        // Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         timer -= Time.deltaTime;
-
-        GameObject projectile = Instantiate(projectilePrefab, bossReference.transform.position, bossReference.transform.rotation);
-        Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
-        Vector2 pos = projectile.transform.position;
-        pos.x -=moveSpeed * Time.fixedDeltaTime;
-
+        // Vector2 pos = projectile.transform.position;
+        // pos.x -= moveSpeed * Time.fixedDeltaTime;
+        // projectile.transform.position = pos;
 
         if (timer <= 0)
         {
@@ -73,16 +66,5 @@ public class CurvedThrowingBehavior : StateMachineBehaviour
     //    // Implement code that sets up animation IK (inverse kinematics)
     //}
 
-     private void spawnProjectile()
-    {
-        if (projectilePrefab != null)
-        {
-            // Select a random position from spawnPositions
 
-            // GameObject projectile = Instantiate(projectilePrefab, bossReference.transform.position, bossReference.transform.rotation);
-            // Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
-            // Vector2 pos = projectile.transform.position;
-
-        }
-    }
 }
