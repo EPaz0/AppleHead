@@ -23,6 +23,11 @@ public class Bullet : MonoBehaviour
         if(enemy != null)
         {
             enemy.TakeDamage(damage);
+        }else{
+            Peel peel = hitInfo.GetComponent<Peel>();
+            if(peel != null){
+                Destroy(hitInfo.gameObject);
+            }
         }
         //Instantiate(imapctEffect, transform.position, transform.rotation);
         Destroy(gameObject);
