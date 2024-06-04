@@ -16,7 +16,12 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMask;
     public Transform FirePoint;
     public GameObject projectilePrefab; // Add a reference to the projectile prefab
-    
+
+
+
+    public BoxCollider2D standingCollider;
+    public BoxCollider2D crouchingCollider;
+
     public bool grounded;
     float xInput;
     float yInput;
@@ -39,6 +44,10 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 firePointDiagonalLeftPosition = new Vector2(-1.62f, 0.89f); // Adjust the position as needed
     private Quaternion firePointDiagonalLeftRotation = Quaternion.Euler(0, 0, 144.111f); // Adjust the rotation as needed
 
+    // The position for FirePoint when crouched
+    private Vector2 firePointCrouchedPosition = new Vector2(1.98f, -1.18f); // Adjust the position as needed
+    private Quaternion firePointCrouchedRotation = Quaternion.identity; // Default rotation
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
         GetInput();
         HandleJump();
         HandleShooting();
+        HandleCrouching();
     }
 
     void FixedUpdate()
@@ -185,6 +195,7 @@ public class PlayerMovement : MonoBehaviour
                     FirePoint.localRotation = Quaternion.Euler(0, 0, 35.889f);
                 }
             }
+  
             else
             {
                 // Straight up
@@ -193,6 +204,13 @@ public class PlayerMovement : MonoBehaviour
             }
 
             Shoot();
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            // Crouched position
+            FirePoint.localPosition = new Vector2(firePointCrouchedPosition.x, firePointCrouchedPosition.y);
+            //FirePoint.localRotation = Quaternion.Euler(0, 0, 35.889f);
+
         }
         else
         {
@@ -238,4 +256,19 @@ public class PlayerMovement : MonoBehaviour
     //     // animator.SetBool("isJumping", !grounded);
 
     // }
+
+
+    void HandleCrouching()
+    {
+        if (Input.GetKey(KeyCode.S))
+        {
+            standingCollider.enabled = false;
+            crouchingCollider.enabled = true;
+        }
+        else
+        {
+            standingCollider.enabled = true;
+            crouchingCollider.enabled = false;
+        }
+    }
 }
