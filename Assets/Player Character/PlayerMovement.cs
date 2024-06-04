@@ -25,7 +25,6 @@ public class PlayerMovement : MonoBehaviour
     public bool grounded;
     float xInput;
     float yInput;
-    float doubleJump;
 
     Animator animator;
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
@@ -140,12 +139,6 @@ public class PlayerMovement : MonoBehaviour
             body.velocity = new Vector2(body.velocity.x, jumpSpeed);
             grounded = false;
             animator.SetBool("isJumping", grounded);
-        } else if(Input.GetButtonDown("Jump") && doubleJump>0){
-            // keep the current x velocity and apply jumpspeed to y velocity
-            body.velocity = new Vector2(body.velocity.x, jumpSpeed*1.2f);
-            grounded = false;
-            animator.SetBool("isJumping", grounded);
-            doubleJump-=1;
         }
         // else if (grounded){
         //     grounded = true;
@@ -166,9 +159,6 @@ public class PlayerMovement : MonoBehaviour
 
         grounded = Physics2D.OverlapAreaAll(groundCheck.bounds.min, groundCheck.bounds.max, groundMask).Length > 0;
         Debug.Log("is grounded: " + grounded);
-        if(grounded){
-            doubleJump = 1;
-        }
     }
 
     void ApplyFriction()
