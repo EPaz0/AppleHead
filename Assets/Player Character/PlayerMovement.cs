@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     public BoxCollider2D standingCollider;
     public BoxCollider2D crouchingCollider;
+    public BoxCollider2D jumpingCollider;
 
     public bool grounded;
     float xInput;
@@ -70,6 +71,17 @@ public class PlayerMovement : MonoBehaviour
         HandleJump();
         HandleShooting();
         HandleCrouching();
+
+        if (!grounded)
+        {
+            standingCollider.enabled = false;
+            jumpingCollider.enabled = true;
+        }
+        else
+        {
+            standingCollider.enabled = true;
+            jumpingCollider.enabled = false;
+        }
     }
 
     void FixedUpdate()
@@ -139,6 +151,9 @@ public class PlayerMovement : MonoBehaviour
             body.velocity = new Vector2(body.velocity.x, jumpSpeed);
             grounded = false;
             animator.SetBool("isJumping", grounded);
+
+
+
         }
         // else if (grounded){
         //     grounded = true;
@@ -148,6 +163,7 @@ public class PlayerMovement : MonoBehaviour
             CheckGround();
             // grounded  = true;
             // if (grounded)
+
             animator.SetFloat("xVelocity", Math.Abs(body.velocity.x));
             animator.SetBool("isJumping", !grounded);
         }
@@ -158,7 +174,7 @@ public class PlayerMovement : MonoBehaviour
     {
 
         grounded = Physics2D.OverlapAreaAll(groundCheck.bounds.min, groundCheck.bounds.max, groundMask).Length > 0;
-        Debug.Log("is grounded: " + grounded);
+        //Debug.Log("is grounded: " + grounded);
     }
 
     void ApplyFriction()
