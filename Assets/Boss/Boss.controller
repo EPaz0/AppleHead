@@ -957,6 +957,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76f57e0011c5a2a49a33920c907ebfc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 2641165347847103961, guid: f80c7ae8fd632d74d90e5e9fcfd12a34, type: 3}
+  projectile: {fileID: 7679670135001652251, guid: d2dfad15a4e27e74b90e74369416eb75, type: 3}
   launchForce: 5
   duration: 5
