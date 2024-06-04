@@ -530,8 +530,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missilePrefab: {fileID: 1008903611380064486, guid: 435bbdc47cbf31b46a3e3b7c00536b45, type: 3}
   launchForce: 10
-  missileDuration: 10
-  timer: 1
+  missileDuration: 5
+  attackTimer: 0
+  minTime: 5
+  maxTime: 10
   spawnPositions:
   - {x: 16.84, y: 12.62, z: -0.05745613}
   - {x: -18.96, y: 12.62, z: -0.05745613}
