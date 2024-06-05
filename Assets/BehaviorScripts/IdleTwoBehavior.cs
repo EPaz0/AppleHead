@@ -22,7 +22,17 @@ public class IdleTwoBehavior : StateMachineBehaviour
     {
         if (timer <= 0)
         {
-            animator.SetTrigger("JumpAttack");
+            int nextState = Random.Range(0, 1);
+
+            if (nextState == 0)
+            {
+                animator.SetTrigger("ChargeAttack");
+            }
+            else
+            {
+                animator.SetTrigger("JumpAttack");
+            }
+            Debug.Log("Timer expired. Transitioning to IdleTwo state.");
         }
         else
         {
