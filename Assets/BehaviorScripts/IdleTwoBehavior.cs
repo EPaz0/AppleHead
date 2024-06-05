@@ -28,7 +28,7 @@ public class IdleTwoBehavior : StateMachineBehaviour
             {
                 animator.SetTrigger("ChargeAttack");
             }
-            else
+            else if (nextState == 1) 
             {
                 animator.SetTrigger("JumpAttack");
             }

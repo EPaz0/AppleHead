@@ -1815,7 +1815,7 @@ GameObject:
   m_Component:
   - component: {fileID: 812818836}
   m_Layer: 8
-  m_Name: Groundcheck
+  m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1961,8 +1961,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb6093c0c28b30640ac0c23f7a57d8c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
-  currentHealth: 3
+  maxHealth: 100
+  currentHealth: 100
   healthBar: {fileID: 1335926054}
   transparentVal: 0.5
   gameManager: {fileID: 975669058}

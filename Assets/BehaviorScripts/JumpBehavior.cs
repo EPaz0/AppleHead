@@ -47,12 +47,12 @@ public class JumpBehavior : StateMachineBehaviour
             {
                 animator.SetTrigger("IdleTwo");
             }
-            else
+            else if (nextState == 1 || nextState == 2 ) 
             {
                 animator.SetTrigger("ChargeAttack");
             }
 
-            Debug.Log("Completed jumping and grounded. Transitioning to next state.");
+            //Debug.Log("Completed jumping and grounded. Transitioning to next state.");
         }
         else
         {
@@ -64,7 +64,7 @@ public class JumpBehavior : StateMachineBehaviour
                 isJumping = true;
                 jumpTimer = jumpInterval; // Reset jump timer
 
-                Debug.Log("Jumping towards player with force: " + jumpForce + " and direction: " + jumpDirection);
+               // Debug.Log("Jumping towards player with force: " + jumpForce + " and direction: " + jumpDirection);
             }
             else
             {
@@ -76,7 +76,7 @@ public class JumpBehavior : StateMachineBehaviour
             {
                 isJumping = false; // Reset jumping state
                 jumpCount++; // Increment jump count
-                Debug.Log("Landed. Jump count: " + jumpCount);
+               // Debug.Log("Landed. Jump count: " + jumpCount);
             }
         }
     }
@@ -85,6 +85,13 @@ public class JumpBehavior : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Debug.Log("Exited JumpBehavior state.");
+        isJumping = false; // Ensure isJumping is reset on exit
+        jumpCount = 0; // Ensure jumpCount is reset on exit
+        jumpTimer = 0; // Reset jumpTimer on exit
+
+       // animator.ResetTrigger("IdleTwo");
+       // animator.ResetTrigger("ChargeAttack");
+       // animator.ResetTrigger("JumpAttack");
     }
 
     // Check if the boss is on the ground

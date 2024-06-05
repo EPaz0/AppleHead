@@ -272,8 +272,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0202d70df9173e84c96e968ea7d95bc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTime: 2
-  maxTime: 4
+  minTime: 3
+  maxTime: 3
 --- !u!1101 &-4075111241873180748
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -992,10 +992,10 @@ AnimatorStateMachine:
     m_Position: {x: -180, y: -140, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2321938361942649183}
-    m_Position: {x: -440, y: -50, z: 0}
+    m_Position: {x: -530, y: -60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2549119876511800563}
-    m_Position: {x: 80, y: -50, z: 0}
+    m_Position: {x: 220, y: -60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2135066967381365072}
     m_Position: {x: -180, y: -260, z: 0}
