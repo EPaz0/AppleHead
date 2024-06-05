@@ -34,7 +34,7 @@ public class SineProjectileBehavior : StateMachineBehaviour
             int rand = Random.Range(0, 2);
             if (rand == 0)
             {
-                animator.SetTrigger("IdleTwo");
+                animator.SetTrigger("ChargeAttack");
             }
             else
             {

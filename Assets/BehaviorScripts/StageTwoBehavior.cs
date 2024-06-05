@@ -7,7 +7,7 @@ public class StageTwoBehavior : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        int rand = Random.Range(0, 2);
+        int rand = Random.Range(0, 3);
         if (rand == 0)
         {
             animator.SetTrigger("IdleTwo");
@@ -18,7 +18,7 @@ public class StageTwoBehavior : StateMachineBehaviour
         }
         else if (rand == 2)
         {
-            //animator.SetTrigger("");
+            animator.SetTrigger("SineProjectile");
         }
     }
 

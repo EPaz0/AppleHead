@@ -32,10 +32,10 @@ public class IdleTwoBehavior : StateMachineBehaviour
             {
                 animator.SetTrigger("JumpAttack");
             }
-            else if (nextState == 2) 
+           /* else if (nextState == 2) 
             {
                 animator.SetTrigger("SineProjectile");
-            }
+            }*/
             Debug.Log("Timer expired. Transitioning to IdleTwo state.");
         }
         else
