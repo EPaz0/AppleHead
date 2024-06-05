@@ -40,10 +40,10 @@ public class PlayerMovement : MonoBehaviour
     private Quaternion firePointUpRotation = Quaternion.Euler(0, 0, 89.869f); // Exact rotation
 
     // The position for FirePoint when aiming diagonally up-right
-    private Vector2 firePointDiagonalRightPosition = new Vector2(1.62f, 0.89f); // Adjust the position as needed
+    private Vector2 firePointDiagonalRightPosition = new Vector2(1.75f, 0.89f); // Adjust the position as needed
     private Quaternion firePointDiagonalRightRotation = Quaternion.Euler(0, 0, 35.889f); // Adjust the rotation as needed
 
-    private Vector2 firePointDiagonalLeftPosition = new Vector2(-1.62f, 0.89f); // Adjust the position as needed
+    private Vector2 firePointDiagonalLeftPosition = new Vector2(-1.75f, 0.89f); // Adjust the position as needed
     private Quaternion firePointDiagonalLeftRotation = Quaternion.Euler(0, 0, 144.111f); // Adjust the rotation as needed
 
     // The position for FirePoint when crouched
