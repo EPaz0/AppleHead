@@ -28,7 +28,7 @@ public class Peel : MonoBehaviour
     void Start(){
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        currentPoint = pointB.transform;
+        currentPoint = pointA.transform;
     }
 
     void FixedUpdate(){
@@ -36,6 +36,10 @@ public class Peel : MonoBehaviour
     }
 
     void Update(){
+        Vector2 point = currentPoint.position - transform.position;
+        Physics2D.IgnoreLayerCollision(11, 8, true);
+
+        Physics2D.IgnoreLayerCollision(11, 10, true);
         if (grounded == true){
             anim.SetBool("isGrounded", true);
             enemyPatrol();
@@ -80,10 +84,10 @@ public class Peel : MonoBehaviour
     }
 
     void enemyPatrol(){
-        Physics2D.IgnoreLayerCollision(11, 8, true);
         Physics2D.IgnoreLayerCollision(11, 11, true);
+        Physics2D.IgnoreLayerCollision(11, 8, true);
 
-        Vector2 point = currentPoint.position - transform.position;
+
         if (currentPoint == pointB.transform){
             rb.velocity = new Vector2(speed, 0);
         }
@@ -92,14 +96,29 @@ public class Peel : MonoBehaviour
         }
 
         if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointB.transform){
+            flip();
             currentPoint = pointA.transform;
         }
         if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointA.transform){
+            flip();
             currentPoint = pointB.transform;
         }
     }
 
     void CheckGround(){
         grounded = Physics2D.OverlapAreaAll(groundCheck.bounds.min, groundCheck.bounds.max, groundMask).Length >0;
+    }
+
+    private void flip(){
+        Vector3 localScale = transform.localScale;
+        localScale.x  *= -1;
+        transform.localScale = localScale;
+    }
+
+    private void OnDrawGizomos(){
+        // for debugging purposes to view pointA and pointB
+        Gizmos.DrawWireSphere(pointA.transform.position, 0.5f);
+        Gizmos.DrawWireSphere(pointB.transform.position, 0.5f);
+        Gizmos.DrawLine(pointA.transform.position, pointB.transform.position);
     }
 }
