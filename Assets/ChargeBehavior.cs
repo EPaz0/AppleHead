@@ -53,9 +53,12 @@ public class ChargeBehavior : StateMachineBehaviour
             {
                 animator.SetTrigger("IdleTwo");
             }
-            else if (nextState == 1 || nextState == 2) 
+            else if (nextState == 1 )
             {
                 animator.SetTrigger("JumpAttack");
+            }
+            else {
+                animator.SetTrigger("SineProjectile");
             }
 
            // Debug.Log("Completed charging. Transitioning to next state.");

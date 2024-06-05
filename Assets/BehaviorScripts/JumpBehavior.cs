@@ -47,9 +47,12 @@ public class JumpBehavior : StateMachineBehaviour
             {
                 animator.SetTrigger("IdleTwo");
             }
-            else if (nextState == 1 || nextState == 2 ) 
+            else if (nextState == 1)
             {
                 animator.SetTrigger("ChargeAttack");
+            }
+            else {
+                animator.SetTrigger("SineProjectile");
             }
 
             //Debug.Log("Completed jumping and grounded. Transitioning to next state.");
