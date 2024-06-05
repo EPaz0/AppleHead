@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
 	private SpriteRenderer spriteRend;
 	private Material currentMat;
 
+	public ChangeImage changeImage;
+
 	private void Awake(){
 		// a function from video for iframes: https://www.youtube.com/watch?v=YSzmCf_L2cE
 		spriteRend = GetComponent<SpriteRenderer>();
@@ -50,7 +52,8 @@ public class Player : MonoBehaviour
 	{
 		currentHealth -= damage;
 		healthBar.SetHealth(currentHealth);
-		
+		changeImage.NextSprite(damage);
+
 		if (currentHealth > 0){
 			//set animation in future here
 			StartCoroutine(Invulnerability());
