@@ -101,4 +101,6 @@ public class JumpBehavior : StateMachineBehaviour
         Debug.Log("IsGrounded check: " + grounded);
         return grounded;
     }
+
+    
 }

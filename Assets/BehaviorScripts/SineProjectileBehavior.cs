@@ -44,7 +44,7 @@ public class SineProjectileBehavior : StateMachineBehaviour
         else
         {
             timer -= Time.deltaTime;
-            Debug.Log("Timer: " + timer);
+            // Debug.Log("Timer: " + timer);
         }
     }
 
