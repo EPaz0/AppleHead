@@ -9,7 +9,7 @@ public class ThrowingBehavior : StateMachineBehaviour
     public float launchForce = 5f; // Adjust the launch force as needed
 
     private float timer;
-    public float duration = 2f; // Duration for the throwing state
+    public float duration; // Duration for the throwing state
 
 
 

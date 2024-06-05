@@ -13,8 +13,7 @@ GameObject:
   - component: {fileID: 3207566060066274395}
   - component: {fileID: 6620318678787625887}
   - component: {fileID: 2104367714802314000}
-  - component: {fileID: -1353118869981371395}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: FlyingBanana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,27 +149,6 @@ MonoBehaviour:
   healthBar: {fileID: 1566673000729300282}
   boss: 0
   LaunchForce: 0
---- !u!114 &-1353118869981371395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1008903611380064486}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01e8a8185fcf91747acbaf2e48bcaf19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
-  maxHealth: 1
-  health: 1
-  damage: 0
-  player: {fileID: 0}
-  deathEffect: {fileID: 0}
-  projectile: {fileID: 0}
-  healthBar: {fileID: 0}
-  LaunchForce: 0
 --- !u!1 &1446740712250563775
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +160,7 @@ GameObject:
   - component: {fileID: 3839687487047297612}
   - component: {fileID: 267510847972112607}
   - component: {fileID: 1566673000729300282}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: FlyingBananaHealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -317,7 +295,7 @@ GameObject:
   - component: {fileID: 2023581805006368465}
   - component: {fileID: 4032111992791486181}
   - component: {fileID: 2696013859846207368}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +370,7 @@ GameObject:
   - component: {fileID: 12307492752975675}
   - component: {fileID: 7691925408321892890}
   - component: {fileID: 2047304704158331969}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -468,7 +446,7 @@ GameObject:
   - component: {fileID: 3393974728174176100}
   - component: {fileID: 8908544209467480909}
   - component: {fileID: 3369828533207296297}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -569,7 +547,7 @@ GameObject:
   - component: {fileID: 6176943355285735178}
   - component: {fileID: 9111818012653178583}
   - component: {fileID: 3229866747380577398}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
