@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
 
     Animator animator;
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
+    private bool crouching = false;     // Used to make sure several things don't trigger while crouching
 
     // The original local position and rotation of the FirePoint
     private Vector2 originalFirePointPosition;
@@ -83,7 +84,9 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            standingCollider.enabled = true;
+            if(!crouching){
+                standingCollider.enabled = true;
+            }
             jumpingCollider.enabled = false;
         }
     }
@@ -294,18 +297,25 @@ public class PlayerMovement : MonoBehaviour
 
     void HandleCrouching()
     {
-        if (Input.GetKey(KeyCode.S))
+        if(Input.GetKey(KeyCode.S) && !crouching)
         {
             standingCollider.enabled = false;
             crouchingCollider.enabled = true;
 
             animator.SetBool("isCrouching", true);
+            crouching = true;
         }
         else
         {
-            animator.SetBool("isCrouching", false);
-            standingCollider.enabled = true;
-            crouchingCollider.enabled = false;
+            if(Input.GetKey(KeyCode.S)){
+
+            }else{
+                animator.SetBool("isCrouching", false);
+                standingCollider.enabled = true;
+                crouchingCollider.enabled = false;
+                crouching = false;
+            }
+            
         }
     }
 }
