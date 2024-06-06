@@ -165,3 +165,4 @@ MonoBehaviour:
   rb: {fileID: 6777172565603781347}
   damage: 10
   impactEffect: {fileID: 0}
+  Shoot: {fileID: 1236703182214618059, guid: aa46d2ddffcca0e43ba62cae157906a3, type: 3}

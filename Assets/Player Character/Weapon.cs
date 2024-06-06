@@ -9,6 +9,8 @@ public class Weapon : MonoBehaviour
     public float fireRate = 0.1f; // Time between shots
     private float nextFireTime = 0f;
 
+    public AudioSource ShootSound;
+
     // Update is called once per frame
     void Update()
     {
@@ -21,6 +23,7 @@ public class Weapon : MonoBehaviour
 
     void Shoot()
     {
+        ShootSound.Play();
         //Shooting Logic
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
     }

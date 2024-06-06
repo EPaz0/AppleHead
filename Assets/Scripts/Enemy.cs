@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
     public bool boss;
 
     public float LaunchForce;
-
+    public AudioSource Damage;
 
     private Animator anim;
 
@@ -43,7 +43,8 @@ public class Enemy : MonoBehaviour
        // Debug.Log("Enemy takes damage: " + damage); // Debug log
         health -= damage;
         //Debug.Log("Enemy health: " + health); // Debug log
-        healthBar.SetHealth(health);       
+        healthBar.SetHealth(health);
+        Damage.Play();       
         if(health <= 0)
         {
             Die();

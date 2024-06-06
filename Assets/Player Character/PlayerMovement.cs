@@ -51,6 +51,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 firePointCrouchedPosition = new Vector2(1.98f, -1.18f); // Adjust the position as needed
     private Quaternion firePointCrouchedRotation = Quaternion.identity; // Default rotation
 
+    public AudioSource ShootSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -234,7 +236,6 @@ public class PlayerMovement : MonoBehaviour
                 FirePoint.localPosition = firePointUpPosition;
                 FirePoint.localRotation = firePointUpRotation;
             }
-
             Shoot();
         }
         else if (Input.GetKey(KeyCode.S))
@@ -280,6 +281,7 @@ public class PlayerMovement : MonoBehaviour
             GameObject projectile = Instantiate(projectilePrefab, FirePoint.position, FirePoint.rotation);
             Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
             rb.velocity = FirePoint.up * 10f; // Adjust the speed as needed
+            ShootSound.Play();
         }
     }
 

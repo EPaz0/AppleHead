@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
 	private Material currentMat;
 
 	public ChangeImage changeImage;
+	public AudioSource Damage;
 
 	private void Awake(){
 		// a function from video for iframes: https://www.youtube.com/watch?v=YSzmCf_L2cE
@@ -53,6 +54,7 @@ public class Player : MonoBehaviour
 		currentHealth -= damage;
 		healthBar.SetHealth(currentHealth);
 		changeImage.NextSprite(damage);
+		Damage.Play();
 
 		if (currentHealth > 0){
 			//set animation in future here
