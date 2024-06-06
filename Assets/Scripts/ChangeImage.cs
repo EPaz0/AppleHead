@@ -24,7 +24,7 @@ public class ChangeImage : MonoBehaviour
     public void NextSprite(int add)
     {
         counter = counter + add;
-        if (counter == 1)
+        if (counter == 2)
         {
             currentSprite++;
             counter = 0;
