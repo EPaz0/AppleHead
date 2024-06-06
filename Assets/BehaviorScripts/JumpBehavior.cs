@@ -33,7 +33,7 @@ public class JumpBehavior : StateMachineBehaviour
         maxJumps = Random.Range(4, 7); // Randomize jump count between 4 and 6
         isJumping = false;
 
-        Debug.Log("Entered JumpBehavior state. Will jump " + maxJumps + " times.");
+        // Debug.Log("Entered JumpBehavior state. Will jump " + maxJumps + " times.");
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -90,15 +90,15 @@ public class JumpBehavior : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Debug.Log("Exited JumpBehavior state.");
+        // Debug.Log("Exited JumpBehavior state.");
         isJumping = false; // Ensure isJumping is reset on exit
         jumpCount = 0; // Ensure jumpCount is reset on exit
         jumpTimer = 0; // Reset jumpTimer on exit
 
        // animator.ResetTrigger("IdleTwo");
        // animator.ResetTrigger("ChargeAttack");
-       animator.ResetTrigger("JumpAttack");
-       animator.ResetTrigger("IdleToJump");
+        animator.ResetTrigger("JumpAttack");
+        animator.ResetTrigger("IdleToJump");
         animator.ResetTrigger("ChargeToJump");
         animator.ResetTrigger("SinToJump");
     }

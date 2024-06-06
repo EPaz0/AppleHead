@@ -7,16 +7,28 @@ public class MoveRightLeft : MonoBehaviour
     public int damage = 1;
 
     public GameObject player;
+    public GameObject boss;
     public float moveSpeed = 5f;
+
+    float px;
+    float bx;
+    float dir;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player");
+
+        px = player.transform.position.x;
+        bx = boss.transform.position.x;
+        dir = 1;
+        if (px > bx) {
+            dir = -1;
+        }
     }
 
     private void FixedUpdate() {
         Vector2 pos = transform.position;
-        pos.x -= moveSpeed * Time.fixedDeltaTime;
+        pos.x -= moveSpeed * Time.fixedDeltaTime * dir;
         transform.position = pos;
     }
 

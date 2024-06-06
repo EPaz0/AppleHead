@@ -15,17 +15,18 @@ public class SineProjectileBehavior : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Debug.Log("Entered Sine State");
-        Debug.Log("Number of time:" + stateTimer);
+        // Debug.Log("Number of time:" + stateTimer);
         // Initialize timers
         timer = stateTimer;
-        projectile = Instantiate(projectilePrefab, bossReference.transform.position, bossReference.transform.rotation);
-        // Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+
+        GameObject b = GameObject.Find("ShooterBanana");
+        GameObject projectile = Instantiate(projectilePrefab, b.transform.position, b.transform.rotation);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Debug.Log("Timer: " + timer);
+        // Debug.Log("Timer: " + timer);
         timer -= Time.deltaTime;
         // Vector2 pos = projectile.transform.position;
         // pos.x -= moveSpeed * Time.fixedDeltaTime;
