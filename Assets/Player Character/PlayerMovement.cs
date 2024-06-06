@@ -96,12 +96,13 @@ public class PlayerMovement : MonoBehaviour
 
         CheckGround();
         ApplyFriction();
-        if (!Input.GetKey(KeyCode.LeftShift) && !crouching) // Prevent movement when holding Shift
+        if (!Input.GetKey(KeyCode.LeftShift) && !crouching) // Allow movement when holding Shift
         {
             MoveWithInput();
         }
         else
         {
+            body.velocity = new Vector2(0, body.velocity.y);
             // Allow turning around while holding Shift
             HandleTurning();
         }
