@@ -96,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
 
          CheckGround();
         ApplyFriction();
-        if (!Input.GetKey(KeyCode.LeftShift)) // Prevent movement when holding Shift
+        if (!Input.GetKey(KeyCode.LeftShift) && !crouching) // Prevent movement when holding Shift and when crouching
         {
             MoveWithInput();
         }
