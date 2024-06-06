@@ -171,5 +171,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca843dcd3554e04d851df825aa4ddb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  peelDamage: 1
   player: {fileID: 1933399996304226553, guid: d1c804ac12dd8e640978d6307a6b07c4, type: 3}
+  pointA: {fileID: 0}
+  pointB: {fileID: 0}
+  groundCheck: {fileID: 0}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
+  speed: 0

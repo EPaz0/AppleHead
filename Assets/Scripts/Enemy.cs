@@ -54,7 +54,7 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        if (health <= 2500 && boss) {
+        if (health <= 1750 && boss) {
            // Debug.Log("HEALTH IS LESS THAN 250");
             anim.SetTrigger("stageTwo");
         }

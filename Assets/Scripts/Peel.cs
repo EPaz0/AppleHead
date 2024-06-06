@@ -6,7 +6,7 @@ public class Peel : MonoBehaviour
 {
 	[Header("Variables To Destroy Peel")]
 
-    public int damage = 1;
+    public int peelDamage = 1;
     public GameObject player;
     // Start is called before the first frame update
     public GameObject pointA;
@@ -55,10 +55,15 @@ public class Peel : MonoBehaviour
         //Debug.Log("Bullet hit: " + hitInfo.name); 
         var layerMask = hitInfo.gameObject.layer;
        // Debug.Log(layerMask);
+        if (grounded == true){
+            // grounded = true; // when the banana collides w ground then allow running
+            enemyPatrol();
+          //Debug.Log("BANANA IS GROUNDED");
+        }
         if(layerMask == 6)
         {
             //Debug.Log(player);
-            player.GetComponent<Player>().TakeDamage(damage);
+            player.GetComponent<Player>().TakeDamage(peelDamage);
             Destroy(gameObject);
         }
         else if (hitInfo.CompareTag("Bullet"))
@@ -66,12 +71,6 @@ public class Peel : MonoBehaviour
             Destroy(gameObject); // Destroy the peel if hit by a bullet
             Destroy(hitInfo.gameObject); // Optionally destroy the bullet as well
         }
-        if (grounded == true){
-            // grounded = true; // when the banana collides w ground then allow running
-            enemyPatrol();
-          //Debug.Log("BANANA IS GROUNDED");
-        }
-
 
     }
 
