@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     public BoxCollider2D jumpingCollider;
 
     public bool grounded;
+    // public bool crouching = false;
     float xInput;
     float yInput;
     float doubleJump;
@@ -295,9 +296,12 @@ public class PlayerMovement : MonoBehaviour
         {
             standingCollider.enabled = false;
             crouchingCollider.enabled = true;
+
+            animator.SetBool("isCrouching", true);
         }
         else
         {
+            animator.SetBool("isCrouching", false);
             standingCollider.enabled = true;
             crouchingCollider.enabled = false;
         }
