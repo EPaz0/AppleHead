@@ -69,7 +69,7 @@ public class Peel : MonoBehaviour
         if (grounded == true){
             // grounded = true; // when the banana collides w ground then allow running
             enemyPatrol();
-            Debug.Log("BANANA IS GROUNDED");
+          //Debug.Log("BANANA IS GROUNDED");
         }
 
 

@@ -16,10 +16,10 @@ public class StageTwoBehavior : StateMachineBehaviour
         {
             animator.SetTrigger("JumpAttack");
         }
-        else if (rand == 2)
+      else if (rand == 2)
         {
             animator.SetTrigger("SineProjectile");
-        }
+       }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

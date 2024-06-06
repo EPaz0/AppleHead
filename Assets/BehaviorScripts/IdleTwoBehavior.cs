@@ -14,6 +14,7 @@ public class IdleTwoBehavior : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        Debug.Log("Entered Idle State");
         timer = Random.Range(minTime, maxTime);
     }
 
@@ -22,21 +23,21 @@ public class IdleTwoBehavior : StateMachineBehaviour
     {
         if (timer <= 0)
         {
-            int nextState = Random.Range(0, 2);
+            int nextState = Random.Range(0, 3);
 
             if (nextState == 0)
             {
-                animator.SetTrigger("ChargeAttack");
+                animator.SetTrigger("IdleToJump");
             }
             else if (nextState == 1) 
             {
-                animator.SetTrigger("JumpAttack");
+                animator.SetTrigger("IdleToSin");
             }
-           /* else if (nextState == 2) 
+            else
             {
-                animator.SetTrigger("SineProjectile");
-            }*/
-            Debug.Log("Timer expired. Transitioning to IdleTwo state.");
+                animator.SetTrigger("IdleToCharge");
+            }
+               Debug.Log("Timer expired. Transitioning to IdleTwo state.");
         }
         else
         {
@@ -47,7 +48,10 @@ public class IdleTwoBehavior : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-
+        Debug.Log("Exit Idle");
+        animator.ResetTrigger("IdleTwo");
+        animator.ResetTrigger("JumpToIdle");
+        animator.ResetTrigger("SinToIdle");
     }
 
 

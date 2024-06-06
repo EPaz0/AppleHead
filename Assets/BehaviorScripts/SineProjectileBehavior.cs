@@ -7,13 +7,15 @@ public class SineProjectileBehavior : StateMachineBehaviour
 {
     public GameObject projectilePrefab;
     public GameObject bossReference;
-    public float stateTimer = 10f; // Duration the boss will throw projectiles
+    public int  stateTimer = 10; // Duration the boss will throw projectiles
     public float moveSpeed = 5;
     private GameObject projectile;
     private float timer;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        Debug.Log("Entered Sine State");
+        Debug.Log("Number of time:" + stateTimer);
         // Initialize timers
         timer = stateTimer;
         projectile = Instantiate(projectilePrefab, bossReference.transform.position, bossReference.transform.rotation);
@@ -23,6 +25,7 @@ public class SineProjectileBehavior : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        Debug.Log("Timer: " + timer);
         timer -= Time.deltaTime;
         // Vector2 pos = projectile.transform.position;
         // pos.x -= moveSpeed * Time.fixedDeltaTime;
@@ -31,28 +34,39 @@ public class SineProjectileBehavior : StateMachineBehaviour
         if (timer <= 0)
         {
 
-            int rand = Random.Range(0, 2);
+            int rand = Random.Range(0, 3);
             if (rand == 0)
             {
-                animator.SetTrigger("ChargeAttack");
+                animator.SetTrigger("SinToIdle");
             }
-            else
+            else if (rand == 1)
             {
-                animator.SetTrigger("JumpAttack");
+                animator.SetTrigger("SinToJump");
             }
+            else 
+            {
+                animator.SetTrigger("SinToCharge");
+            }
+
+            /*
+             * else {
+             * animator.SetTrigger("ChargeAttack);
+             * }
+             */
         }
-        else
-        {
-            timer -= Time.deltaTime;
-            // Debug.Log("Timer: " + timer);
-        }
+  
     }
 
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        Debug.Log("Exit Sine State");
+        animator.ResetTrigger("SineProjectile");
+        animator.ResetTrigger("JumpToSin");
+        animator.ResetTrigger("IdleToSin");
+        animator.ResetTrigger("ChargeToSin");
+
+    }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

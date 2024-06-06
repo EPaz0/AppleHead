@@ -45,15 +45,18 @@ public class JumpBehavior : StateMachineBehaviour
 
             if (nextState == 0)
             {
-                animator.SetTrigger("IdleTwo");
+                animator.SetTrigger("JumpToIdle");
             }
-            else if (nextState == 1)
+            else if (nextState == 1) {
+                animator.SetTrigger("JumpToSin");
+            }
+             else 
             {
-                animator.SetTrigger("ChargeAttack");
+                animator.SetTrigger("JumpToCharge");
             }
-            else {
-                animator.SetTrigger("SineProjectile");
-            }
+          /*  else {
+                animator.SetTrigger("");
+            }*/
 
             //Debug.Log("Completed jumping and grounded. Transitioning to next state.");
         }
@@ -94,14 +97,17 @@ public class JumpBehavior : StateMachineBehaviour
 
        // animator.ResetTrigger("IdleTwo");
        // animator.ResetTrigger("ChargeAttack");
-       // animator.ResetTrigger("JumpAttack");
+       animator.ResetTrigger("JumpAttack");
+       animator.ResetTrigger("IdleToJump");
+        animator.ResetTrigger("ChargeToJump");
+        animator.ResetTrigger("SinToJump");
     }
 
     // Check if the boss is on the ground
     private bool IsGrounded()
     {
         bool grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-        Debug.Log("IsGrounded check: " + grounded);
+      //Debug.Log("IsGrounded check: " + grounded);
         return grounded;
     }
 

@@ -37,7 +37,7 @@ public class ChargeBehavior : StateMachineBehaviour
         // Perform a small jump to signal the charge
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 
-        //Debug.Log("Entered ChargeBehavior state. Will charge " + maxCharges + " times.");
+        Debug.Log("Entered ChargeBehavior state. Will charge " + maxCharges + " times.");
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -51,17 +51,25 @@ public class ChargeBehavior : StateMachineBehaviour
 
             if (nextState == 0)
             {
-                animator.SetTrigger("IdleTwo");
+                animator.SetTrigger("ChargeToJump");
             }
-            else if (nextState == 1 )
+            else if (nextState == 1)
+            {
+                animator.SetTrigger("ChargeToIdle");
+            }
+            else 
+            {
+                animator.SetTrigger("ChargeToSin");
+            }
+      /*   else if (nextState == 1 )
             {
                 animator.SetTrigger("JumpAttack");
             }
             else {
                 animator.SetTrigger("SineProjectile");
             }
-
-           // Debug.Log("Completed charging. Transitioning to next state.");
+      */
+            Debug.Log("Completed charging. Transitioning to next state.");
         }
         else
         {
@@ -70,7 +78,7 @@ public class ChargeBehavior : StateMachineBehaviour
                 // Once the jump is completed, start waiting
                 hasJumped = true;
                 isWaiting = true;
-                //Debug.Log("Jump completed. Starting wait timer.");
+                Debug.Log("Jump completed. Starting wait timer.");
             }
 
             if (isWaiting)
@@ -87,7 +95,7 @@ public class ChargeBehavior : StateMachineBehaviour
                     chargeCount++; // Increment charge count
                     waitTimer = waitTime; // Reset the wait timer for the next charge
 
-                    //Debug.Log("Charging towards player. Charge count: " + chargeCount);
+                    Debug.Log("Charging towards player. Charge count: " + chargeCount);
                 }
             }
 
@@ -95,7 +103,7 @@ public class ChargeBehavior : StateMachineBehaviour
             {
                 // Reset jump flag for the next charge
                 hasJumped = false;
-               // Debug.Log("Charge stopped. Preparing for the next charge.");
+                Debug.Log("Charge stopped. Preparing for the next charge.");
             }
         }
     }
@@ -103,9 +111,13 @@ public class ChargeBehavior : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        animator.ResetTrigger("ChargeAttack");
+        animator.ResetTrigger("JumpToCharge");
+        animator.ResetTrigger("IdleToCharge");
+        animator.ResetTrigger("SinToCharge");
         // Stop moving when exiting the state
         rb.velocity = Vector2.zero;
-       // Debug.Log("Exited ChargeBehavior state.");
+        Debug.Log("Exited ChargeBehavior state.");
 
     }
 }
