@@ -27,8 +27,7 @@ public class MoveRightLeft : MonoBehaviour
             player.TakeDamage(damage);
         }
     }
-
-<<<<<<< HEAD
+    void OnTriggerEnter2D(Collider2D hitInfo){
        // Debug.Log("Bullet hit: " + hitInfo.name); 
         var layerMask = hitInfo.gameObject.layer;
         //Debug.Log(layerMask);
@@ -42,11 +41,6 @@ public class MoveRightLeft : MonoBehaviour
         {
             Destroy(gameObject);
         }
-=======
-    // Update is called once per frame
-    void Update()
-    {
->>>>>>> 5053f8a695c1a840db9d184fc4910a2c8a887ffb
 
     }
 }
