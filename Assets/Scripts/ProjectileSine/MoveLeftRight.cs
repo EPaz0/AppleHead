@@ -6,12 +6,12 @@ public class MoveRightLeft : MonoBehaviour
 {
     public int damage = 1;
 
-    public Player player;
+    public GameObject player;
     public float moveSpeed = 5f;
     // Start is called before the first frame update
     void Start()
     {
-
+        player = GameObject.Find("Player");
     }
 
     private void FixedUpdate() {
@@ -20,15 +20,8 @@ public class MoveRightLeft : MonoBehaviour
         transform.position = pos;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        if (collision.gameObject.tag == "Player")
-        {
-            player.TakeDamage(damage);
-        }
-    }
-
-<<<<<<< HEAD
        // Debug.Log("Bullet hit: " + hitInfo.name); 
         var layerMask = hitInfo.gameObject.layer;
         //Debug.Log(layerMask);
@@ -42,11 +35,6 @@ public class MoveRightLeft : MonoBehaviour
         {
             Destroy(gameObject);
         }
-=======
-    // Update is called once per frame
-    void Update()
-    {
->>>>>>> 5053f8a695c1a840db9d184fc4910a2c8a887ffb
 
     }
 }

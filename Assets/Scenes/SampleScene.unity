@@ -4483,6 +4483,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4775921807602272264, guid: 942631392f7a61e4a8ed27446f198ecf, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4775921807602272264, guid: 942631392f7a61e4a8ed27446f198ecf, type: 3}
       propertyPath: m_Volume
       value: 0.3
       objectReference: {fileID: 0}
@@ -4690,6 +4694,50 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1428271232594587947, guid: 70338a0b9717bbe4bb70fe3a9a288df6, type: 3}
+      propertyPath: gradient.ctime0
+      value: 13107
+      objectReference: {fileID: 0}
+    - target: {fileID: 1428271232594587947, guid: 70338a0b9717bbe4bb70fe3a9a288df6, type: 3}
+      propertyPath: gradient.ctime1
+      value: 26214
+      objectReference: {fileID: 0}
+    - target: {fileID: 1428271232594587947, guid: 70338a0b9717bbe4bb70fe3a9a288df6, type: 3}
+      propertyPath: gradient.ctime2
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 1428271232594587947, guid: 70338a0b9717bbe4bb70fe3a9a288df6, type: 3}
+      propertyPath: gradient.ctime3
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1428271232594587947, guid: 70338a0b9717bbe4bb70fe3a9a288df6, type: 3}
+      propertyPath: gradient.key0.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1428271232594587947, guid: 70338a0b9717bbe4bb70fe3a9a288df6, type: 3}
+      propertyPath: gradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1428271232594587947, guid: 70338a0b9717bbe4bb70fe3a9a288df6, type: 3}
+      propertyPath: gradient.key1.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1428271232594587947, guid: 70338a0b9717bbe4bb70fe3a9a288df6, type: 3}
+      propertyPath: gradient.key1.r
+      value: 0.9866247
+      objectReference: {fileID: 0}
+    - target: {fileID: 1428271232594587947, guid: 70338a0b9717bbe4bb70fe3a9a288df6, type: 3}
+      propertyPath: gradient.key3.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1428271232594587947, guid: 70338a0b9717bbe4bb70fe3a9a288df6, type: 3}
+      propertyPath: gradient.key3.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1428271232594587947, guid: 70338a0b9717bbe4bb70fe3a9a288df6, type: 3}
+      propertyPath: gradient.m_NumColorKeys
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1624305015240349534, guid: 70338a0b9717bbe4bb70fe3a9a288df6, type: 3}
       propertyPath: m_Name
       value: ShooterBanana
