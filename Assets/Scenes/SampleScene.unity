@@ -1080,7 +1080,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.73, y: 5.3, z: -10}
+  m_LocalPosition: {x: -0.73, y: 4.45, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2614,7 +2614,7 @@ Transform:
   m_GameObject: {fileID: 1210213575}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.64, y: 4.38, z: -0.10287914}
+  m_LocalPosition: {x: 0.64, y: 3.5299997, z: -0.10287914}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4706,6 +4706,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1205486262841458607, guid: 70338a0b9717bbe4bb70fe3a9a288df6, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1205486262841458607, guid: 70338a0b9717bbe4bb70fe3a9a288df6, type: 3}
+      propertyPath: m_GravityScale
+      value: 1.3
+      objectReference: {fileID: 0}
     - target: {fileID: 1428271232594587947, guid: 70338a0b9717bbe4bb70fe3a9a288df6, type: 3}
       propertyPath: gradient.ctime0
       value: 13107
@@ -4758,6 +4766,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1850046339751446883, guid: 70338a0b9717bbe4bb70fe3a9a288df6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f970bcaf7d51d3047ba8430c6bb9554e, type: 3}
     - target: {fileID: 4392688706704713030, guid: 70338a0b9717bbe4bb70fe3a9a288df6, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -4780,11 +4792,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8611501566856464251, guid: 70338a0b9717bbe4bb70fe3a9a288df6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8611501566856464251, guid: 70338a0b9717bbe4bb70fe3a9a288df6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8611501566856464251, guid: 70338a0b9717bbe4bb70fe3a9a288df6, type: 3}
       propertyPath: m_LocalPosition.x
