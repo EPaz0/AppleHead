@@ -304,6 +304,7 @@ public class PlayerMovement : MonoBehaviour
 
             animator.SetBool("isCrouching", true);
             crouching = true;
+            body.velocity = new Vector2(0, body.velocity.y);
         }
         else
         {
