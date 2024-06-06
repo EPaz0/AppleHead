@@ -558,7 +558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a431448dd602849bb10c60e90e9b8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
+  speed: 20
   jumpForce: 5
 --- !u!1101 &-1503228381120069570
 AnimatorStateTransition:
