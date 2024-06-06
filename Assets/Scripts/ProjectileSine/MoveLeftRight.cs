@@ -35,11 +35,11 @@ public class MoveRightLeft : MonoBehaviour
         //Debug.Log(layerMask);
         if(layerMask == 6)
         {
-            //Debug.Log(player);
+            Debug.Log("GETTING HIT");
             player.GetComponent<Player>().TakeDamage(damage);
             Destroy(gameObject);
         }
-        else if(layerMask == 7)
+        else if(layerMask == 12)
         {
             Destroy(gameObject);
         }
