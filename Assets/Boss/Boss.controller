@@ -272,8 +272,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0202d70df9173e84c96e968ea7d95bc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTime: 3
-  maxTime: 3
+  minTime: 0.5
+  maxTime: 1
 --- !u!1101 &-4072890429811042578
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1175,7 +1175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 8937901315824686529, guid: c76b938dd0627d14bb13ee2f898563dd, type: 3}
   bossReference: {fileID: 1624305015240349534, guid: 70338a0b9717bbe4bb70fe3a9a288df6, type: 3}
-  stateTimer: 10
+  stateTimer: 3
   moveSpeed: 5
 --- !u!1101 &4948537168016563495
 AnimatorStateTransition:
