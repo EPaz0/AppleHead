@@ -17,16 +17,19 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
     
-       //hitInfo.GetComponent<Enemy>();
-      // Debug.Log("Bullet hit: " + hitInfo.name); 
-        Enemy enemy = hitInfo.GetComponent<Enemy>();
-        if(enemy != null)
-        {
-            enemy.TakeDamage(damage);
-        }else{
+        //hitInfo.GetComponent<Enemy>();
+        //Debug.Log("Bullet hit: " + hitInfo.name);
+
+        if(hitInfo.tag == "Peel"){
             Peel peel = hitInfo.GetComponent<Peel>();
             if(peel != null){
                 Destroy(hitInfo.gameObject);
+            }   
+        }else{
+            Enemy enemy = hitInfo.GetComponent<Enemy>();
+            if(enemy != null)
+            {
+                enemy.TakeDamage(damage);
             }
         }
         //Instantiate(imapctEffect, transform.position, transform.rotation);

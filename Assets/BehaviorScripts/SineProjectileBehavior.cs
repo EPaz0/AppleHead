@@ -19,8 +19,8 @@ public class SineProjectileBehavior : StateMachineBehaviour
         // Initialize timers
         timer = stateTimer;
 
-        GameObject b = GameObject.Find("ShooterBanana");
-        GameObject projectile = Instantiate(projectilePrefab, b.transform.position, b.transform.rotation);
+        bossReference = GameObject.Find("ShooterBanana");
+        GameObject projectile = Instantiate(projectilePrefab, bossReference.transform.position, bossReference.transform.rotation);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

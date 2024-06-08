@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour
         Damage.Play();       
         if(health <= 0)
         {
-            Die();
+            this.Die();
         }
     }
 
@@ -85,7 +85,7 @@ public class Enemy : MonoBehaviour
         //Uncomment later when have deatheeffects
         //Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
-        gameManager.gameOver(); // to load game over screen - will remove when boss is implemented
+        //gameManager.gameOver(); // to load game over screen - will remove when boss is implemented
 
     }
 }
