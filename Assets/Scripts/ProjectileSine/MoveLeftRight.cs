@@ -17,6 +17,7 @@ public class MoveRightLeft : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
+        boss = GameObject.Find("ShooterBanana");
 
         px = player.transform.position.x;
         bx = boss.transform.position.x;

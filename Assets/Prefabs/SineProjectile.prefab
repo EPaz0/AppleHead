@@ -97,10 +97,9 @@ GameObject:
   - component: {fileID: -7027707209430124902}
   - component: {fileID: 9055400480164390149}
   - component: {fileID: 6689776692944354389}
-  - component: {fileID: 2114602373318987493}
   m_Layer: 10
   m_Name: SineProjectile
-  m_TagString: Untagged
+  m_TagString: Peel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,8 +133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  player: {fileID: 1933399996304226553, guid: d1c804ac12dd8e640978d6307a6b07c4, type: 3}
-  boss: {fileID: 1624305015240349534, guid: 70338a0b9717bbe4bb70fe3a9a288df6, type: 3}
+  player: {fileID: 0}
+  boss: {fileID: 0}
   moveSpeed: 10
 --- !u!114 &-7027707209430124902
 MonoBehaviour:
@@ -223,26 +222,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2114602373318987493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8937901315824686529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4de71df41ffd99247898c67dda2ed97e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
-  maxHealth: 1000
-  health: 1000
-  damage: 1
-  player: {fileID: 0}
-  deathEffect: {fileID: 0}
-  projectile: {fileID: 0}
-  healthBar: {fileID: 0}
-  boss: 0
-  LaunchForce: 0
-  Damage: {fileID: 4775921807602272264, guid: 942631392f7a61e4a8ed27446f198ecf, type: 3}

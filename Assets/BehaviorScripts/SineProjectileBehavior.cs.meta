@@ -4,7 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - projectilePrefab: {fileID: 8319453152311059841, guid: 92fd5937718cd2b479fe0ab49fe9dd3d, type: 3}
+  - projectilePrefab: {fileID: 8937901315824686529, guid: c76b938dd0627d14bb13ee2f898563dd, type: 3}
   - bossReference: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}

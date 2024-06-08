@@ -21,10 +21,7 @@ public class Bullet : MonoBehaviour
         //Debug.Log("Bullet hit: " + hitInfo.name);
 
         if(hitInfo.tag == "Peel"){
-            Peel peel = hitInfo.GetComponent<Peel>();
-            if(peel != null){
-                Destroy(hitInfo.gameObject);
-            }   
+            Destroy(hitInfo.gameObject); 
         }else{
             Enemy enemy = hitInfo.GetComponent<Enemy>();
             if(enemy != null)
